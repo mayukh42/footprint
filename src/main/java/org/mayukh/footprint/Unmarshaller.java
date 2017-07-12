@@ -53,7 +53,7 @@ public class Unmarshaller {
                     throw new UnmarshallerException("Marshalled object cannot contain both value and ref");
 
                 if (details.keys().contains("value")) {
-                    // primitive (raw) type
+                    // primitive type (ref. org.mayukh.footprint.Primitives)
                     String value = ((StringV) details.get("value")).getValue();
                     Object valueObject = Primitives.create(type, value);
                     setterMethod.invoke(o, valueObject);

@@ -7,6 +7,9 @@ import java.util.Set;
 
 /**
  * Created by mayukh42 on 7/11/2017.
+ *
+ * Literal types: those which can be directly created from String literals. Called 'primitives' for convenience.
+ * TODO: Add more boxed primitives
  */
 public class Primitives {
 
@@ -17,10 +20,10 @@ public class Primitives {
             "java.time.LocalDate"
     ));
 
-    /** isRawType(): returns true if the argument is a raw type.
+    /** isPrimitiveType(): returns true if the argument is a type that can be directly created from String Literal.
      * Clients must use this method rather than a getter of the rawTypes set.
      */
-    static boolean isRawType(String type) {
+    static boolean isPrimitiveType(String type) {
         return rawTypes.contains(type);
     }
 

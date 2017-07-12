@@ -41,7 +41,7 @@ public class Marshaller {
                     sb.append("\"type\": \"").append(field.getType().getName()).append("\",");
                     field.setAccessible(true);
 
-                    if (isRawType(field.getType().getName()))
+                    if (isPrimitiveType(field.getType().getName()))
                         sb.append("\"value\": \"").append(field.get(object)).append('"');
                     else sb.append("\"ref\": ").append(emit(field.get(object)));
                     sb.append('}');
